@@ -10,6 +10,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Properties
     var players: [Int] = [20, 20, 20, 20]  // Start with four players with 20 life each
     var gameStarted = false
+    var history: [String] = []
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHistorySegue" {
+            if let historyVC = segue.destination as? HistoryViewController {
+                historyVC.history = self.history
+            }
+        }
+    }
+
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -141,24 +151,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     // MARK: - Life Button Tapped
     @objc func lifeButtonTapped(_ sender: UIButton) {
-            guard let textField = findTextField(for: sender),
-                  let text = textField.text,
-                  let adjustment = Int(text) else {
-                return
-            }
-            let increment = sender.currentTitle == "+"
-            let playerIndex = sender.tag
-            let adjustedValue = increment ? adjustment : -adjustment
-            players[playerIndex] += adjustedValue
-            players[playerIndex] = max(players[playerIndex], 0)
-            textField.text = ""
-            updateLifeTotalLabels()
-            checkForLoser()
-            if adjustedValue != 0 && !gameStarted {
-                gameStarted = true
-                addPlayerButton.isEnabled = false  // Disable adding new players when game starts
-            }
+        guard let textField = findTextField(for: sender),
+              let text = textField.text,
+              let adjustment = Int(text),
+              adjustment != 0 else {
+            return
         }
+        let increment = sender.currentTitle == "+"
+        let playerIndex = sender.tag
+        let adjustedValue = increment ? adjustment : -adjustment
+        players[playerIndex] += adjustedValue
+        players[playerIndex] = max(players[playerIndex], 0)
+        textField.text = ""
+        updateLifeTotalLabels()
+        checkForLoser()
+        
+        // Append to history
+        let actionType = increment ? "gained" : "lost"
+        history.append("Player \(playerIndex + 1) \(actionType) \(abs(adjustedValue)) life.")
+        
+        // Print the entire history array to the console
+        print("Current Game History:")
+        history.forEach { print($0) }
+        
+        if !gameStarted && adjustedValue != 0 {
+            gameStarted = true
+            addPlayerButton.isEnabled = false  // Disable adding new players when game starts
+        }
+    }
+
 
         func checkForLoser() {
             for (index, lifeTotal) in players.enumerated() {
