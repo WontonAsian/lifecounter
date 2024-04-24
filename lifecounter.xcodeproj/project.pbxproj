@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B73645092BD8AD5C00D147F6 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73645082BD8AD5C00D147F6 /* HistoryViewController.swift */; };
 		B7D402662BD0DDEF0084D5C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D402652BD0DDEF0084D5C6 /* AppDelegate.swift */; };
 		B7D402682BD0DDEF0084D5C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D402672BD0DDEF0084D5C6 /* SceneDelegate.swift */; };
 		B7D4026A2BD0DDEF0084D5C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D402692BD0DDEF0084D5C6 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B73645082BD8AD5C00D147F6 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B7D402622BD0DDEF0084D5C6 /* lifecounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lifecounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D402652BD0DDEF0084D5C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D402672BD0DDEF0084D5C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				B7D402652BD0DDEF0084D5C6 /* AppDelegate.swift */,
 				B7D402672BD0DDEF0084D5C6 /* SceneDelegate.swift */,
 				B7D402692BD0DDEF0084D5C6 /* ViewController.swift */,
+				B73645082BD8AD5C00D147F6 /* HistoryViewController.swift */,
 				B7D4026B2BD0DDEF0084D5C6 /* Main.storyboard */,
 				B7D4026E2BD0DDF00084D5C6 /* Assets.xcassets */,
 				B7D402702BD0DDF00084D5C6 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				B7D4026A2BD0DDEF0084D5C6 /* ViewController.swift in Sources */,
 				B7D402662BD0DDEF0084D5C6 /* AppDelegate.swift in Sources */,
 				B7D402682BD0DDEF0084D5C6 /* SceneDelegate.swift in Sources */,
+				B73645092BD8AD5C00D147F6 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
